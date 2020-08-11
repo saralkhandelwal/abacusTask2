@@ -1,5 +1,10 @@
 version: "3"
 services: 
+    mongo:
+        container_name: mongo
+        image: mongo
+        ports:
+            - "27017:27017" 
     app2:
         container_name: app2
         build:  .
@@ -8,8 +13,4 @@ services:
             - "3000:3000"
         depends_on:  
             - "mongo"
-    mongo:
-        container_name: mongo
-        image: mongo
-        ports:
-            - "27017:27017" 
+
